@@ -8,12 +8,8 @@ def sort(src_array):
         if src_array[i - 1] <= src_array[i]:
             i += 1
         else:
-            temp = src_array[i]
-            src_array[i] = src_array[i - 1]
-            src_array[i - 1] = temp
-            i -= 1
-            if i < 1:
-                i = 1
+            src_array[i - 1], src_array[i] = src_array[i], src_array[i - 1]
+            i = i if i == 1 else i - 1
     return src_array
 
 def main():
